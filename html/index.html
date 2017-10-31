@@ -1,0 +1,20 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <script src="/libs/qimessaging/1.0/qimessaging.js"></script>
+    <script>
+      var session = new QiSession();
+
+      function sampleButtonClicked() {
+        console.log("sampleButtonClicked");
+        session.service("ALMemory").done(function (ALMemory) {
+          ALMemory.raiseEvent("Pepper/showLog", "Event: ButtonClicked");
+        });
+
+      }
+    </script>
+  </head>
+  <body>
+    <button style="font-size: 10em" type="button" onclick="sampleButtonClicked();">Click Me!!!!!!</button>
+  </body>
+</html>
